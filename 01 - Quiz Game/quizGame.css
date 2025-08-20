@@ -15,6 +15,8 @@ body {
   align-items: center;
 
   font-family: 'Arial', sans-serif;
+
+  padding-block: 100px;
 }
 
 p {
@@ -37,12 +39,7 @@ p {
   width: 550px;
 }
 
-.card p {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.card button {
+.normal-button {
   background-color: rgb(232, 106, 51);
 
   color: white;
@@ -58,11 +55,11 @@ p {
   transition: background-color 150ms;
 }
 
-.card button:hover {
+.normal-button:hover {
   background-color: rgb(212, 91, 40);
 }
 
-.normal-text {
+.first-page-text {
   color: rgb(102, 102, 102);
   font-size: 18px;
 
@@ -75,4 +72,112 @@ p {
   font-weight: bold;
 
   margin-bottom: 25px;
+}
+
+.question {
+  color: rgb(51, 51, 51);
+  font-size: 24px;
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+.info-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-text {
+  color: rgb(102, 102, 102);
+  font-size: 16px;
+
+  margin-bottom: 25px;
+}
+
+.choice,
+.choice-incorrect,
+.choice-correct {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+
+  width: 100%;
+  height: 55px;
+
+  margin-bottom: 10px;
+
+  color: rgb(51, 51, 51);
+  font-size: 19px;
+  text-align: start;
+
+  padding-inline-start: 15px;
+
+  cursor: pointer;
+  transition: background-color 300ms, border-color 300ms;
+}
+
+.choice {
+  background-color: rgb(248, 240, 229);
+  border-color: rgb(234, 219, 200);
+}
+
+.choice-incorrect {
+  background-color: rgb(255, 240, 240);
+  border-color: rgb(255, 189, 189);
+}
+
+.choice-correct {
+  background-color: rgb(230, 255, 240);
+  border-color: rgb(163, 240, 196)
+}
+
+.choice:hover {
+  background-color: rgb(234, 219, 200);
+  border-color: rgb(218, 192, 174);
+}
+
+.progress-bar {
+  background-color: rgb(248, 240, 229);
+
+  height: 10px;
+  width: 100%;
+
+  margin-top: 15px;
+
+  border-radius: 5px;
+}
+
+.progress-1-5th,
+.progress-2-5th,
+.progress-3-5th,
+.progress-4-5th,
+.progress-5-5th {
+  background-color: rgb(232, 106, 51);
+
+  height: 100%;
+
+  border-radius: 5px 0 0 5px;
+}
+
+.progress-1-5th {
+  width: 20%;
+}
+
+.progress-2-5th {
+  width: 40%;
+}
+
+.progress-3-5th {
+  width: 60%;
+}
+
+.progress-4-5th {
+  width: 80%;
+}
+
+.progress-5-5th {
+  width: 100%;
+  border-radius: 5px;
 }
