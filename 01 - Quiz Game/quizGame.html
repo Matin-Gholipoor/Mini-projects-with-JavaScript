@@ -4,50 +4,41 @@
 
 <head>
   <link rel="stylesheet" href="quizGame.css">
+  <title>Quiz Game</title>
 </head>
 
 <body>
-  <!-- <div class="card">
+  <div class="card js-start-card">
     <p class="title">Quiz Time!</p>
     <p class="first-page-text">Test your knowledge with these fun questions</p>
-    <button class="normal-button">
+    <button class="normal-button js-start-button">
       Start Quiz
     </button>
-  </div> -->
+  </div>
 
-  <!-- <div class="card">
-    <p class="question">
-      What is the capital of France?
-    </p>
+  <div class="card js-question-card">
+    <p class="question js-question"></p>
     <div class="info-row">
-      <p class="info-text">
-        Question 1 of 5
-      </p>
-      <p class="info-text">
-        Score: 0
-      </p>
+      <p class="info-text js-question-number"></p>
+      <p class="info-text js-score"></p>
     </div>
-    <button class="choice-incorrect">London</button>
-    <button class="choice-correct">Berlin</button>
-    <button class="choice">Paris</button>
-    <button class="choice">Madrid</button>
+    <button class="choice js-choice"></button>
+    <button class="choice js-choice"></button>
+    <button class="choice js-choice"></button>
+    <button class="choice js-choice"></button>
 
     <div class="progress-bar">
-      <div class="progress-1-5th"></div>
+      <div class="progress js-progress"></div>
     </div>
-  </div> -->
+  </div>
 
-  <div class="card">
+  <div class="card js-result-card">
     <p class="title">Quiz Results</p>
     <div class="result-box">
-      <p class="score-text">
-        You scored 1 out of 5
-      </p>
-      <p class="description-text">
-        Keep studying! You'll get better!
-      </p>
+      <p class="score-text js-score-text"></p>
+      <p class="description-text js-description-text"></p>
     </div>
-    <button class="normal-button">
+    <button class="normal-button js-restart-button">
       Restart Quiz
     </button>
   </div>
