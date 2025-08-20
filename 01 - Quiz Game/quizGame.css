@@ -181,3 +181,31 @@ p {
   width: 100%;
   border-radius: 5px;
 }
+
+.result-box {
+  background-color: rgb(248, 240, 229);
+
+  width: 100%;
+  padding-block: 20px;
+
+  border-radius: 10px;
+
+  margin-bottom: 35px;
+}
+
+.score-text {
+  color: rgb(51, 51, 51);
+
+  font-size: 19px;
+  text-align: center;
+
+  margin-bottom: 15px;
+}
+
+.description-text {
+  color: rgb(232, 106, 51);
+
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
