@@ -1,0 +1,78 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(245, 239, 230);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Arial', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 7%);
+
+  width: 550px;
+}
+
+.card p {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.card button {
+  background-color: rgb(232, 106, 51);
+
+  color: white;
+  font-size: 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 15px 30px;
+
+  cursor: pointer;
+
+  transition: background-color 150ms;
+}
+
+.card button:hover {
+  background-color: rgb(212, 91, 40);
+}
+
+.normal-text {
+  color: rgb(102, 102, 102);
+  font-size: 18px;
+
+  margin-bottom: 25px;
+}
+
+.title {
+  color: rgb(232, 106, 51);
+  font-size: 36px;
+  font-weight: bold;
+
+  margin-bottom: 25px;
+}
