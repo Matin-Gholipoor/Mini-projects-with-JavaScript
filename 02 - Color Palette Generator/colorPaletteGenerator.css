@@ -1,0 +1,138 @@
+body {
+  background-image: linear-gradient(135deg, #83a8df, #c3cfe2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 30%);
+
+  width: 740px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: bold;
+
+  justify-self: center;
+
+  margin-bottom: 10px;
+}
+
+.separator-line {
+  background-color: rgb(102, 126, 234);
+  height: 3px;
+  width: 50%;
+
+  justify-self: center;
+
+  margin-bottom: 30px;
+}
+
+.generate-button {
+  background-image: linear-gradient(45deg, #667eea, #764ba2);
+  ;
+
+  width: 200px;
+  height: 50px;
+
+  border: none;
+  border-radius: 1000px;
+
+  color: white;
+  font-size: 17px;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  cursor: pointer;
+}
+
+.generate-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(102, 126, 234, 30%);
+}
+
+.generate-button i {
+  font-size: 14px;
+}
+
+.colors-row {
+  display: grid;
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+@media (width < 550px) {
+  .colors-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (width >=551px) and (width < 670px) {
+  .colors-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (width >=671px) {
+  .colors-row {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.color-box {
+  width: 100%;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 10%);
+
+  border-radius: 10px;
+
+  transition: transform 200ms;
+}
+
+.color-box:hover {
+  transform: translateY(-6px);
+}
+
+.color {
+  background-color: lightblue;
+  width: 100%;
+  height: 120px;
+
+  border-radius: 10px 10px 0 0;
+
+  cursor: pointer;
+}
+
+.color-code {
+  font-size: 15px;
+  letter-spacing: 1px;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin: 15px 12px;
+
+  cursor: text;
+}
+
+.color-code i {
+  color: rgb(100, 116, 139);
+  cursor: pointer;
+}
