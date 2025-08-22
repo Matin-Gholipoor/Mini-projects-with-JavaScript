@@ -16,7 +16,7 @@
       <p class="your-balance-text">
         Your Balance
       </p>
-      <p class="balance-value">
+      <p class="balance-value js-balance-value">
         $0.00
       </p>
       <div class="income-expense-row">
@@ -24,7 +24,7 @@
           <p class="income-title">
             Income
           </p>
-          <p class="income-value">
+          <p class="income-value js-income-value">
             $0.00
           </p>
         </div>
@@ -32,7 +32,7 @@
           <p class="expense-title">
             Expense
           </p>
-          <p class="expense-value">
+          <p class="expense-value js-expense-value">
             $0.00
           </p>
         </div>
@@ -44,26 +44,7 @@
         <p class="transactions-title">
           Transactions
         </p>
-        <div class="transactions-section">
-          <div class="history-card positive-history">
-            <p class="history-name">
-              transaction 1
-            </p>
-            <p>
-              $5.00
-            </p>
-            <button class="delete-button">X</button>
-          </div>
-          <div class="history-card negative-history">
-            <p class="history-name">
-              transaction 2
-            </p>
-            <p>
-              -$4.00
-            </p>
-            <button class="delete-button">X</button>
-          </div>
-        </div>
+        <div class="transactions-section js-transactions-section"></div>
       </div>
 
       <div class="add-transaction-section">
@@ -74,18 +55,18 @@
         <label class="input-title">
           Description
         </label>
-        <input type="text" class="input" placeholder="Enter description..." required="true">
+        <input type="text" class="input js-description-input" placeholder="Enter description..." required="true">
 
         <label class="input-title">
           Amount
         </label>
-        <input type="number" class="input" placeholder="Enter amount..." required="true">
+        <input type="number" class="input js-amount-input" placeholder="Enter amount..." required="true">
 
         <p class="input-guide">
           Use negative (-) for expenses
         </p>
 
-        <button class="add-transaction-button">
+        <button class="add-transaction-button js-add-transaction-button">
           Add Transaction
         </button>
       </div>
