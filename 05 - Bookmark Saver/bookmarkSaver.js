@@ -1,17 +1,48 @@
-const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [
-	{
-		name: 'Google',
-		url: 'https://google.com'
-	},
-	{
-		name: 'YouTube',
-		url: 'https://youtube.com'
-	}
-];
+const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
 loadPage();
 
+document.querySelectorAll('input').forEach((input) => {
+	input.addEventListener('keypress', (event) => {
+		if (event.key === 'Enter') {
+			addNewBookmark();
+		}
+	});
+});
+
+document.querySelector('.js-add-button').addEventListener('click', addNewBookmark);
+
+function addNewBookmark() {
+	const name = document.querySelector('.js-name-input').value;
+	const url = document.querySelector('.js-url-input').value;
+
+	if (name && url) {
+		if (document.querySelector('.js-url-input').checkValidity()) {
+			document.querySelector('.js-name-input').value = '';
+			document.querySelector('.js-url-input').value = '';
+
+			bookmarks.push(
+				{
+					name,
+					url
+				}
+			);
+
+			saveBookmarks();
+			loadPage();
+		}
+		else {
+			window.alert('Please enter a valid URL starting with http:// or https://');
+		}
+	}
+	else {
+		window.alert('Please enter both name and URL.');
+	}
+}
+
 function loadPage() {
+	document.querySelector('.js-bookmark-list').innerHTML = '';
+
 	bookmarks.forEach((bookmark) => {
 		const newBookmark = `
 			<div class="bookmark">
