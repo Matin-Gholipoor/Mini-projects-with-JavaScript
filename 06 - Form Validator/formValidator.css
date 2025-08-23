@@ -1,0 +1,121 @@
+body {
+  background-color: rgb(249, 249, 249);
+
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+label,
+label input {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 400px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px;
+
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+}
+
+form label {
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+
+  margin-bottom: 6px;
+}
+
+form label input {
+  font-size: 14px;
+
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+
+  width: 100%;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(240, 240, 240);
+  border-radius: 4px;
+
+  transition: border-color 200ms;
+}
+
+.input-error,
+.input-error:focus {
+  border-color: rgb(231, 76, 60);
+}
+
+.input-correct,
+.input-correct:focus{
+  border-color: rgb(46, 204, 113);
+}
+
+.error-message {
+  color: rgb(231, 76, 60);
+  font-weight: normal;
+  font-size: 12px;
+}
+
+form label input::placeholder {
+  font-size: 14px;
+}
+
+form label input:focus {
+  outline: none;
+  border-color: rgb(52, 152, 219);
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+
+  color: white;
+  font-size: 16px;
+
+  background-color: rgb(52, 152, 219);
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: background-color 200ms;
+}
+
+form button:hover {
+  background-color: rgb(41, 128, 185);
+}
