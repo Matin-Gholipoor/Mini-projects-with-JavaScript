@@ -175,6 +175,8 @@ p {
 }
 
 .input {
+  font-size: 17px;
+
   width: 100%;
 
   border-color: rgb(226, 232, 240);

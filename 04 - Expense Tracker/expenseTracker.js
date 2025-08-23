@@ -1,23 +1,40 @@
 let incomeCents;
 let expenseCents;
 
+let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
 loadPage();
 
-function loadPage() {
-  let transactions = JSON.parse(localStorage.getItem('transactions')) || [
-    {
-      description: 'car fix',
-      amountCents: -10000
-    },
-    {
-      description: 'winning in lottery',
-      amountCents: 500000
-    },
-    {
-      description: 'charity',
-      amountCents: -5000
+document.querySelector('.js-add-transaction-button').addEventListener('click', (event) => {
+  if (
+    document.querySelector('.js-description-input').value !== '' &&
+    document.querySelector('.js-amount-input').value !== ''
+  ) {
+    event.preventDefault();
+    addNewTransaction();
+    loadPage();
+    saveTransactions();
+  }
+});
+document.querySelectorAll('input').forEach((input) => {
+  input.addEventListener('keypress', (event) => {
+    console.log(event.key);
+    if (event.key === 'Enter') {
+      if (
+        document.querySelector('.js-description-input').value !== '' &&
+        document.querySelector('.js-amount-input').value !== ''
+      ) {
+        event.preventDefault();
+        addNewTransaction();
+        loadPage();
+        saveTransactions();
+      }
     }
-  ];
+  });
+});
+
+function loadPage() {
+  document.querySelector('.js-transactions-section').innerHTML = '';
 
   incomeCents = transactions.reduce((balanceCents, transaction) => {
     if (transaction.amountCents >= 0)
@@ -59,4 +76,24 @@ function loadPage() {
 
 function centsToDollars(cents) {
   return (cents / 100).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function saveTransactions() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+function addNewTransaction() {
+  const description = document.querySelector('.js-description-input').value;
+  const amountCents = Number(document.querySelector('.js-amount-input').value);
+
+  transactions.push(
+    {
+      description,
+      amountCents
+    }
+  );
+
+  document.querySelectorAll('input').forEach((input) => {
+    input.value = '';
+  });
 }
