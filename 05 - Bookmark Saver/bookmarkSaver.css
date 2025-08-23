@@ -1,0 +1,123 @@
+body {
+	background-color: rgb(240, 249, 244);
+
+	min-height: 100vh;
+	margin: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 400px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 10px;
+
+	background-color: white;
+	padding: 20px;
+
+	border-radius: 10px;
+
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	color: rgb(46, 204, 113);
+	font-weight: bold;
+	font-size: 32px;
+
+	margin-bottom: 10px;
+}
+
+.input-box {
+	width: 100%;
+
+	padding: 10px;
+
+	border-style: solid;
+	border-color: rgb(221, 221, 221);
+	border-width: 1px;
+	border-radius: 5px;
+}
+
+.add-button {
+	width: 100%;
+
+	background-color: rgb(46, 204, 113);
+	color: white;
+
+	padding: 10px;
+
+	border: none;
+	border-radius: 5px;
+
+	cursor: pointer;
+
+	transition: background-color 300ms;
+}
+
+.add-button:hover {
+	background-color: rgb(39, 174, 96);
+}
+
+.bookmark-list{
+	width: 100%;
+	margin-top: 10px;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.bookmark {
+	width: 100%;
+
+	background-color: rgb(249, 249, 249);
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(221, 221, 221);
+	border-radius: 5px;
+
+	padding: 12px 10px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bookmark a{
+	color: rgb(46, 204, 113);
+	text-decoration: none;
+}
+
+.remove-button{
+	background-color: rgb(231, 76, 60);
+	color: white;
+
+	border: none;
+	border-radius: 4px;
+	padding: 5px 10px;
+
+	cursor: pointer;
+
+	transition: background-color 300ms;
+}
+
+.remove-button:hover{
+	background-color: rgb(192, 57, 43);
+}
