@@ -89,6 +89,7 @@ form label input {
   color: rgb(231, 76, 60);
   font-weight: normal;
   font-size: 12px;
+  height: 14px;
 }
 
 form label input::placeholder {
