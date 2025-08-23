@@ -301,6 +301,20 @@ p {
   transition:
     transform 150ms,
     box-shadow 150ms;
+
+  animation: enter 300ms;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 .history-card:hover {
