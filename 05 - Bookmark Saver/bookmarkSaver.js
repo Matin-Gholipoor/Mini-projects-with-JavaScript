@@ -53,6 +53,14 @@ function loadPage() {
 
 		document.querySelector('.js-bookmark-list').innerHTML += newBookmark;
 	});
+
+	document.querySelectorAll('.js-remove-button').forEach((button, index)=>{
+		button.addEventListener('click', ()=>{
+			bookmarks.splice(index, 1);
+			saveBookmarks();
+			loadPage();
+		});
+	});
 }
 
 function saveBookmarks() {
