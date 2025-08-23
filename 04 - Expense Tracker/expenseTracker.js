@@ -66,11 +66,22 @@ function loadPage() {
         <p>
           ${transaction.amountCents < 0 ? '-' : ''}$${centsToDollars(Math.abs(transaction.amountCents))}
         </p>
-        <button class="delete-button">X</button>
+        <button class="delete-button js-delete-button">X</button>
       </div>
     `;
 
     document.querySelector('.js-transactions-section').innerHTML += history;
+  });
+
+  document.querySelectorAll('.js-delete-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+      console.log(index);
+      console.log(transactions);
+      transactions.splice(index, 1);
+      console.log(transactions);
+      loadPage();
+      saveTransactions();
+    });
   });
 }
 
