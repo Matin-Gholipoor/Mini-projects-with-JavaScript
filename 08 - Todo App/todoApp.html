@@ -3,13 +3,86 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="todoApp.css">
-    <title>Todo App</title>
+  <link rel="stylesheet" href="todoApp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Todo App</title>
 </head>
 
 <body>
 
-    <script src="todoApp.js"></script>
+  <div class="app">
+    <header>
+      <p class="title">
+        <i class="fa-solid fa-circle-check"></i>
+        My Tasks
+      </p>
+      <p class="date">
+        Sunday, Aug 24
+      </p>
+    </header>
+
+    <main>
+      <div class="input-row">
+        <input type="text" placeholder="What do you need to do?" class="task-input">
+        <button class="add-button">
+          +
+        </button>
+      </div>
+
+      <div class="tabs-row">
+        <p class="current-tab">
+          All
+        </p>
+        <p class="tab">
+          Active
+        </p>
+        <p class="tab">
+          Completed
+        </p>
+      </div>
+
+      <div class="empty-list">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <p>
+          No tasks here yet
+        </p>
+      </div>
+
+      <div class="task-list">
+        <div class="task">
+          <input type="checkbox">
+          <p class="completed-task-name">
+            task 1
+          </p>
+          <button class="remove-button">
+            X
+          </button>
+        </div>
+        <div class="task">
+          <input type="checkbox">
+          <p>
+            task 2
+          </p>
+          <button class="remove-button">
+            X
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p class="left-items-text">
+        2 items left
+      </p>
+      <button class="clear-completed-button">
+        Clear Completed
+      </button>
+    </footer>
+  </div>
+
+  <script src="todoApp.js"></script>
 </body>
 
 </html>
