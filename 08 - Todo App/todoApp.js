@@ -57,6 +57,15 @@ taskInput.addEventListener('keypress', (event) => {
     addNewTask();
 });
 
+clearCompletedButton.addEventListener('click', () => {
+  tasks = tasks.filter((task) => {
+    return task.state === 'active' ? true : false;
+  });
+
+  saveTasks();
+  loadPage();
+});
+
 function loadPage() {
   dateText.innerHTML = dayjs().format('dddd, MMM D');
   showTasks();
