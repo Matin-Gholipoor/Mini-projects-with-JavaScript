@@ -18,70 +18,48 @@
         <i class="fa-solid fa-circle-check"></i>
         My Tasks
       </p>
-      <p class="date">
-        Sunday, Aug 24
-      </p>
+      <p class="date js-date-text"></p>
     </header>
 
     <main>
       <div class="input-row">
-        <input type="text" placeholder="What do you need to do?" class="task-input">
-        <button class="add-button">
+        <input type="text" placeholder="What do you need to do?" class="task-input js-task-input">
+        <button class="add-button js-add-button">
           +
         </button>
       </div>
 
       <div class="tabs-row">
-        <p class="current-tab">
+        <p class="current-tab js-all-tasks-tab js-tab">
           All
         </p>
-        <p class="tab">
+        <p class="tab js-active-tasks-tab js-tab">
           Active
         </p>
-        <p class="tab">
+        <p class="tab js-completed-tasks-tab js-tab">
           Completed
         </p>
       </div>
 
-      <div class="empty-list">
+      <div class="empty-list js-empty-list">
         <i class="fa-solid fa-clipboard-list"></i>
         <p>
           No tasks here yet
         </p>
       </div>
 
-      <div class="task-list">
-        <div class="task">
-          <input type="checkbox">
-          <p class="completed-task-name">
-            task 1
-          </p>
-          <button class="remove-button">
-            X
-          </button>
-        </div>
-        <div class="task">
-          <input type="checkbox">
-          <p>
-            task 2
-          </p>
-          <button class="remove-button">
-            X
-          </button>
-        </div>
-      </div>
+      <div class="tasks-list js-tasks-list"></div>
     </main>
 
     <footer>
-      <p class="left-items-text">
-        2 items left
-      </p>
-      <button class="clear-completed-button">
+      <p class="left-items-text js-left-items-text"></p>
+      <button class="clear-completed-button js-clear-completed-button">
         Clear Completed
       </button>
     </footer>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="todoApp.js"></script>
 </body>
 
