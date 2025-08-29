@@ -1,18 +1,4 @@
-let tasks = JSON.parse(localStorage.getItem('tasks')) ||
-  [
-    {
-      name: 'task 1',
-      state: 'completed'
-    },
-    {
-      name: 'task 2',
-      state: 'active'
-    },
-    {
-      name: 'task 3',
-      state: 'completed'
-    }
-  ];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const taskInput = document.querySelector('.js-task-input');
 const addButton = document.querySelector('.js-add-button');
@@ -26,6 +12,12 @@ const tasksList = document.querySelector('.js-tasks-list');
 const tabs = document.querySelectorAll('.js-tab');
 const emptyList = document.querySelector('.js-empty-list');
 
+tabs.forEach((tab) => {
+  tab.style.color = 'rgb(var(--text-gray))';
+  tab.style.borderBottomColor = 'white';
+});
+tabs[0].style.color = 'rgb(var(--main-purple))';
+tabs[0].style.borderBottomColor = 'rgb(var(--main-purple))';
 loadPage();
 
 allTasksTab.addEventListener('click', () => {
@@ -68,19 +60,31 @@ completedTasksTab.addEventListener('click', () => {
   });
 });
 
+addButton.addEventListener('click', () => { addNewTask() });
+taskInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter')
+    addNewTask();
+});
+
 function loadPage() {
   dateText.innerHTML = dayjs().format('dddd, MMM D');
 
-  showTasks('all');
+  tabs.forEach((tab, index) => {
+    if (tab.style.color === 'rgb(var(--main-purple))')
+      switch (index) {
+        case 0:
+          showTasks('all');
+          break;
+        case 1:
+          showTasks('active');
+          break;
+        case 2:
+          showTasks('completed');
+          break;
+      }
+  });
 
   leftItemsText.textContent = `${getLeftItemsCount()} items left`;
-
-  tabs.forEach((tab) => {
-    tab.style.color = 'rgb(var(--text-gray))';
-    tab.style.borderBottomColor = 'white';
-  });
-  tabs[0].style.color = 'rgb(var(--main-purple))';
-  tabs[0].style.borderBottomColor = 'rgb(var(--main-purple))';
 }
 
 function showTasks(state) {
@@ -166,4 +170,24 @@ function getLeftItemsCount() {
   });
 
   return count;
+}
+
+function saveTasks() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function addNewTask() {
+  if (taskInput.value) {
+    tasks.push(
+      {
+        name: taskInput.value,
+        state: 'active'
+      }
+    );
+
+    saveTasks();
+    loadPage();
+
+    taskInput.value = '';
+  }
 }
