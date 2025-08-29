@@ -84,6 +84,15 @@ function loadPage() {
       loadPage();
     });
   });
+
+  document.querySelectorAll('.js-remove-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      tasks.splice(button.dataset.taskIndex, 1);
+
+      saveTasks();
+      loadPage();
+    });
+  });
 }
 
 function showTasks() {
@@ -106,7 +115,7 @@ function showTasks() {
   tasksList.innerHTML = '';
   let tasksCount = 0;
 
-  tasks.forEach((task) => {
+  tasks.forEach((task, index) => {
     switch (state) {
       case 'all':
         tasksList.insertAdjacentHTML("beforeend",
@@ -116,7 +125,7 @@ function showTasks() {
               <p ${task.state === 'completed' ? 'class="completed-task-name"' : ''}>
                 ${task.name}
               </p>
-              <button class="remove-button">
+              <button class="remove-button js-remove-button" data-task-index=${index}>
                 X
               </button>
             </div>  
@@ -134,7 +143,7 @@ function showTasks() {
                 <p>
                   ${task.name}
                 </p>
-                <button class="remove-button">
+                <button class="remove-button js-remove-button" data-task-index=${index}>
                   X
                 </button>
               </div>  
@@ -153,7 +162,7 @@ function showTasks() {
                 <p class="completed-task-name">
                   ${task.name}
                 </p>
-                <button class="remove-button">
+                <button class="remove-button js-remove-button" data-task-index=${index}>
                   X
                 </button>
               </div>  
