@@ -127,28 +127,22 @@ main {
   column-gap: 20px;
 }
 
-.tab,
-.current-tab {
+.tab{
   font-size: 16px;
   padding: 5px 2px;
 
   cursor: pointer;
 
-  transition: color 200ms;
-}
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 
-.tab {
-  color: rgb(var(--text-gray));
+  transition: 
+    color 200ms,
+    border-bottom-color 200ms;
 }
 
 .tab:hover {
   color: rgb(var(--main-purple));
-}
-
-.current-tab {
-  color: rgb(var(--main-purple));
-
-  border-bottom: 2px solid rgb(var(--main-purple));
 }
 
 .empty-list {

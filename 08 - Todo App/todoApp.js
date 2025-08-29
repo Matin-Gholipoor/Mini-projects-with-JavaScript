@@ -26,21 +26,18 @@ const tasksList = document.querySelector('.js-tasks-list');
 const tabs = document.querySelectorAll('.js-tab');
 const emptyList = document.querySelector('.js-empty-list');
 
-
 loadPage();
 
 allTasksTab.addEventListener('click', () => {
   showTasks('all');
 
   tabs.forEach((tab, index) => {
-    if (tab.classList.contains('current-tab')) {
-      tab.classList.remove('current-tab');
-      tab.classList.add('tab');
-    }
+    tab.style.color = 'rgb(var(--text-gray))';
+    tab.style.borderBottomColor = 'white';
 
     if (index === 0) {
-      tab.classList.remove('current-tab');
-      tab.classList.add('current-tab');
+      tab.style.color = 'rgb(var(--main-purple))';
+      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
     }
   });
 });
@@ -48,14 +45,12 @@ activeTasksTab.addEventListener('click', () => {
   showTasks('active');
 
   tabs.forEach((tab, index) => {
-    if (tab.classList.contains('current-tab')) {
-      tab.classList.remove('current-tab');
-      tab.classList.add('tab');
-    }
+    tab.style.color = 'rgb(var(--text-gray))';
+    tab.style.borderBottomColor = 'white';
 
     if (index === 1) {
-      tab.classList.remove('tab');
-      tab.classList.add('current-tab');
+      tab.style.color = 'rgb(var(--main-purple))';
+      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
     }
   });
 });
@@ -63,14 +58,12 @@ completedTasksTab.addEventListener('click', () => {
   showTasks('completed');
 
   tabs.forEach((tab, index) => {
-    if (tab.classList.contains('current-tab')) {
-      tab.classList.remove('current-tab');
-      tab.classList.add('tab');
-    }
+    tab.style.color = 'rgb(var(--text-gray))';
+    tab.style.borderBottomColor = 'white';
 
     if (index === 2) {
-      tab.classList.remove('tab');
-      tab.classList.add('current-tab');
+      tab.style.color = 'rgb(var(--main-purple))';
+      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
     }
   });
 });
@@ -81,6 +74,13 @@ function loadPage() {
   showTasks('all');
 
   leftItemsText.textContent = `${getLeftItemsCount()} items left`;
+
+  tabs.forEach((tab) => {
+    tab.style.color = 'rgb(var(--text-gray))';
+    tab.style.borderBottomColor = 'white';
+  });
+  tabs[0].style.color = 'rgb(var(--main-purple))';
+  tabs[0].style.borderBottomColor = 'rgb(var(--main-purple))';
 }
 
 function showTasks(state) {
