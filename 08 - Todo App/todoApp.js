@@ -21,43 +21,34 @@ tabs[0].style.borderBottomColor = 'rgb(var(--main-purple))';
 loadPage();
 
 allTasksTab.addEventListener('click', () => {
-  showTasks('all');
-
-  tabs.forEach((tab, index) => {
+  tabs.forEach((tab) => {
     tab.style.color = 'rgb(var(--text-gray))';
     tab.style.borderBottomColor = 'white';
-
-    if (index === 0) {
-      tab.style.color = 'rgb(var(--main-purple))';
-      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
-    }
   });
+  tabs[0].style.color = 'rgb(var(--main-purple))';
+  tabs[0].style.borderBottomColor = 'rgb(var(--main-purple))';
+
+  loadPage();
 });
 activeTasksTab.addEventListener('click', () => {
-  showTasks('active');
-
-  tabs.forEach((tab, index) => {
+  tabs.forEach((tab) => {
     tab.style.color = 'rgb(var(--text-gray))';
     tab.style.borderBottomColor = 'white';
-
-    if (index === 1) {
-      tab.style.color = 'rgb(var(--main-purple))';
-      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
-    }
   });
+  tabs[1].style.color = 'rgb(var(--main-purple))';
+  tabs[1].style.borderBottomColor = 'rgb(var(--main-purple))';
+
+  loadPage();
 });
 completedTasksTab.addEventListener('click', () => {
-  showTasks('completed');
-
-  tabs.forEach((tab, index) => {
+  tabs.forEach((tab) => {
     tab.style.color = 'rgb(var(--text-gray))';
     tab.style.borderBottomColor = 'white';
-
-    if (index === 2) {
-      tab.style.color = 'rgb(var(--main-purple))';
-      tab.style.borderBottomColor = 'rgb(var(--main-purple))';
-    }
   });
+  tabs[2].style.color = 'rgb(var(--main-purple))';
+  tabs[2].style.borderBottomColor = 'rgb(var(--main-purple))';
+
+  loadPage();
 });
 
 addButton.addEventListener('click', () => { addNewTask() });
@@ -68,26 +59,27 @@ taskInput.addEventListener('keypress', (event) => {
 
 function loadPage() {
   dateText.innerHTML = dayjs().format('dddd, MMM D');
+  showTasks();
+  leftItemsText.textContent = `${getLeftItemsCount()} items left`;
+}
 
+function showTasks() {
+  let state;
   tabs.forEach((tab, index) => {
     if (tab.style.color === 'rgb(var(--main-purple))')
       switch (index) {
         case 0:
-          showTasks('all');
+          state = 'all';
           break;
         case 1:
-          showTasks('active');
+          state = 'active';
           break;
         case 2:
-          showTasks('completed');
+          state = 'completed';
           break;
       }
   });
 
-  leftItemsText.textContent = `${getLeftItemsCount()} items left`;
-}
-
-function showTasks(state) {
   tasksList.innerHTML = '';
   let tasksCount = 0;
 
