@@ -263,7 +263,7 @@ footer {
   color: rgb(var(--text-gray));
 }
 
-.clear-completed-button {
+.footer-buttons {
   background: none;
   border: none;
   color: rgb(var(--text-gray));
@@ -273,6 +273,6 @@ footer {
   transition: color 200ms;
 }
 
-.clear-completed-button:hover{
+.footer-buttons:hover{
     color: rgb(var(--remove-red));
 }

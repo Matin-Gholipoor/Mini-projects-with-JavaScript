@@ -11,6 +11,7 @@ const dateText = document.querySelector('.js-date-text');
 const tasksList = document.querySelector('.js-tasks-list');
 const tabs = document.querySelectorAll('.js-tab');
 const emptyList = document.querySelector('.js-empty-list');
+const clearAllButton = document.querySelector('.js-clear-all-button');
 
 tabs.forEach((tab) => {
   tab.style.color = 'rgb(var(--text-gray))';
@@ -61,6 +62,13 @@ clearCompletedButton.addEventListener('click', () => {
   tasks = tasks.filter((task) => {
     return task.state === 'active' ? true : false;
   });
+
+  saveTasks();
+  loadPage();
+});
+
+clearAllButton.addEventListener('click', () => {
+  tasks.length = 0;
 
   saveTasks();
   loadPage();
