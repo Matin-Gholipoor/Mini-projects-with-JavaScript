@@ -61,6 +61,20 @@ function loadPage() {
   dateText.innerHTML = dayjs().format('dddd, MMM D');
   showTasks();
   leftItemsText.textContent = `${getLeftItemsCount()} items left`;
+
+  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+    checkbox.addEventListener('click', () => {
+      if (tasks[index].state === 'active') {
+        tasks[index].state = 'completed';
+      }
+      else {
+        tasks[index].state = 'active';
+      }
+
+      saveTasks();
+      loadPage();
+    });
+  });
 }
 
 function showTasks() {
