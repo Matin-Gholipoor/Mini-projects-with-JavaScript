@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   margin: 0;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ p {
   box-sizing: border-box;
 }
 
-img{
+img {
   width: 10px;
   height: 10px;
 }
@@ -95,6 +95,10 @@ img{
     width: 100%;
     animation: y 200ms;
   }
+
+  .results-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media(width >=600px) {
@@ -109,6 +113,16 @@ img{
 
   .search-input {
     flex: 1;
+  }
+
+  .results-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >=850px) {
+  .results-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -172,8 +186,8 @@ img{
 .searching-message {
   font-size: 19px;
 
-  margin-top: 20px;
-  display: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .error-message {
@@ -188,4 +202,62 @@ img{
   width: 100%;
 
   text-align: center;
+
+  display: none;
+}
+
+.results-container {
+  width: 100%;
+
+  display: grid;
+
+  row-gap: 25px;
+  column-gap: 25px;
+}
+
+.food-card {
+  background-color: white;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  transition: all 200ms;
+
+  cursor: pointer;
+}
+
+.food-card:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  transform: translateY(-5px);
+}
+
+.food-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+
+  border-radius: 8px 8px 0 0;
+}
+
+.result-card-bottom-row {
+  padding: 20px;
+}
+
+.food-name {
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+.food-tag{
+  background-color: rgb(var(--light-orange));
+  
+  display: inline-block;
+  padding: 6px 8px;
+
+  border-radius: 100px;
+
+  font-size: 13px;
 }
