@@ -1,5 +1,5 @@
 :root {
-  --body-color: 248, 249, 250;
+  --light-gray-background: 248, 249, 250;
   --primary-orange: 255, 126, 95;
   --light-orange: 255, 177, 153;
   --dark-orange: 235, 94, 65;
@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: rgb(var(--body-color));
+  background-color: rgb(var(--light-gray-background));
   min-height: 100vh;
   margin: 0;
 
@@ -27,11 +27,6 @@ p {
 
 * {
   box-sizing: border-box;
-}
-
-img {
-  width: 10px;
-  height: 10px;
 }
 
 .container {
@@ -213,6 +208,8 @@ img {
 
   row-gap: 25px;
   column-gap: 25px;
+
+  margin-bottom: 40px;
 }
 
 .food-card {
@@ -251,13 +248,130 @@ img {
   margin-bottom: 20px;
 }
 
-.food-tag{
+.food-tag {
   background-color: rgb(var(--light-orange));
-  
+
   display: inline-block;
   padding: 6px 8px;
 
   border-radius: 100px;
 
   font-size: 13px;
+}
+
+.recipe-section {
+  background-color: white;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 25px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  border-radius: 8px;
+}
+
+.back-button {
+  background-color: white;
+
+  border: 1px solid rgb(var(--primary-orange));
+  border-radius: 8px;
+
+  color: rgb(var(--primary-orange));
+  font-size: 17px;
+  font-weight: bold;
+
+  padding: 8px 15px;
+
+  cursor: pointer;
+
+  align-self: start;
+
+  transition: all 200ms;
+
+  margin-bottom: 30px;
+}
+
+.back-button i{
+  font-size: 15px;
+}
+
+.back-button:hover {
+  background-color: rgb(var(--primary-orange));
+  color: white;
+}
+
+.recipe-section img {
+  width: 400px;
+
+  border-radius: 8px;
+
+  margin-bottom: 35px;
+}
+
+.recipe-section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.recipe-section-tag {
+  padding: 5px 15px;
+  margin-bottom: 40px;
+}
+
+.recipe-subsection-title {
+  font-size: 18px;
+  font-weight: bold;
+
+  align-self: start;
+}
+
+.instructions-text {
+  line-height: 27px;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ingredients-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  margin-bottom: 50px;
+}
+
+.ingredient {
+  background-color: rgb(var(--light-gray-background));
+
+  padding: 10px;
+
+  border-radius: 8px;
+}
+
+.ingredient i {
+  color: rgb(var(--checkmark-green));
+  font-size: 14px;
+}
+
+.ingredient p {
+  display: inline-block;
+}
+
+.youtube-button {
+  background-color: red;
+
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
 }
