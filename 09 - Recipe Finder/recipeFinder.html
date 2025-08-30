@@ -4,10 +4,46 @@
 
 <head>
   <link rel="stylesheet" href="recipeFinder.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Recipe Finder</title>
 </head>
 
 <body>
+  <div class="container">
+    <p class="title title--main">
+      <i class="fa-solid fa-utensils"></i>
+      Recipe Finder
+    </p>
+
+    <p class="regular-text regular-text--subtitle">
+      Find delicious recipes from around the world
+    </p>
+
+    <p class="regular-text regular-text--data-reference">
+      Data from
+      <a href="https://www.themealdb.com/api.php" class="link-text">
+        TheMealDB
+      </a>
+      🧑‍🍳
+    </p>
+
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search for mrals or keywords">
+      <button class="search-button">
+        Search
+      </button>
+    </div>
+
+    <p class="searching-message">
+      Searching for "egg"...
+    </p>
+
+    <p class="error-message">
+      Please enter a search term
+    </p>
+  </div>
 
   <script src="recipeFinder.js"></script>
 </body>
