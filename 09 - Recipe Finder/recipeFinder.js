@@ -123,6 +123,13 @@ function lookup(mealId) {
         }
 
         youtubeLink.href = meal.strYoutube;
+
+        recipeSection.scrollIntoView(
+          {
+            behavior: 'smooth',
+            block: 'start'
+          }
+        );
       }
     })
     .catch(error => {
@@ -130,6 +137,12 @@ function lookup(mealId) {
     });
 }
 
-backButton.addEventListener('click', ()=>{
+backButton.addEventListener('click', () => {
   recipeSection.style.display = 'none';
+
+  const y = searchingMessage.offsetTop - 40;
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
 });
