@@ -213,7 +213,7 @@ p {
   margin-bottom: 40px;
 }
 
-.food-card {
+.meal-card {
   background-color: white;
   border-radius: 8px;
 
@@ -224,13 +224,13 @@ p {
   cursor: pointer;
 }
 
-.food-card:hover {
+.meal-card:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
   transform: translateY(-5px);
 }
 
-.food-card img {
+.meal-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -242,14 +242,14 @@ p {
   padding: 20px;
 }
 
-.food-name {
+.meal-name {
   font-size: 18px;
   font-weight: bold;
 
   margin-bottom: 20px;
 }
 
-.food-tag {
+.meal-category {
   background-color: rgb(var(--light-orange));
 
   display: inline-block;
@@ -318,7 +318,7 @@ p {
   margin-bottom: 20px;
 }
 
-.recipe-section-tag {
+.recipe-section-category {
   padding: 5px 15px;
   margin-bottom: 40px;
 }

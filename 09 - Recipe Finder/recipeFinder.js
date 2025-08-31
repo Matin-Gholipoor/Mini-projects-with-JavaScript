@@ -6,7 +6,7 @@ const resultsContainer = document.querySelector('.js-results-container');
 const backButton = document.querySelector('.js-back-button');
 const recipeSection = document.querySelector('.js-recipe-section');
 const recipeSectionTitle = document.querySelector('.js-recipe-section-title');
-const recipeSectionTag = document.querySelector('.js-recipe-section-tag');
+const recipeSectioncategory = document.querySelector('.js-recipe-section-category');
 const instructionText = document.querySelector('.js-instructions-text');
 const ingredientsSection = document.querySelector('.js-ingredients-section');
 
@@ -39,23 +39,23 @@ function search() {
         throw new Error('something went wrong while searching.');
     })
     .then(data => {
-      const foods = data.meals;
+      const meals = data.meals;
 
       searchingMessage.textContent = `Search results for "${searchKeyword}":`;
 
-      if (foods) {
+      if (meals) {
         resultsContainer.style.display = 'grid';
         resultsContainer.innerHTML = '';
-        foods.forEach((food) => {
+        meals.forEach((meal) => {
           resultsContainer.innerHTML += `
-          <div class="food-card">
-            <img src=${food.strMealThumb} class="food-thumbnail">
+          <div class="meal-card">
+            <img src=${meal.strMealThumb} class="meal-thumbnail">
             <div class="result-card-bottom-row">
-              <p class="food-name">
-                ${food.strMeal}
+              <p class="meal-name">
+                ${meal.strMeal}
               </p>
-              <p class="food-tag">
-                ${food.strCategory}
+              <p class="meal-category">
+                ${meal.strCategory}
               </p>
             </div>
           </div>
