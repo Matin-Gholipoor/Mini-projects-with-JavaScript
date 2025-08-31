@@ -46,4 +46,16 @@ To explore any project locally:
 2. Open the desired project folder  
 3. Run the `.html` file in your browser (or use a local server like **Live Server**)  
 
+To run each project on Github click the related link below:
+
+- [Quiz Game](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/01%20-%20Quiz%20Game/quizGame.html)
+- [Color Palette Generator](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/02%20-%20Color%20Palette%20Generator/colorPaletteGenerator.html) 
+- [Drag and drop](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/03%20-%20Drag%20and%20drop/DragAndDrop.html) 
+- [Expense Tracker](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/04%20-%20Expense%20Tracker/expenseTracker.html) 
+- [Bookmark Saver](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/05%20-%20Bookmark%20Saver/bookmarkSaver.html) 
+- [Form Validator](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/06%20-%20Form%20Validator/formValidator.html) 
+- [Password Generator](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/07%20-%20Password%20Generator/passwordGenerator.html) 
+- [Todo App](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/08%20-%20Todo%20App/todoApp.html) 
+- [Recipe Finder](https://matin-gholipoor.github.io/Mini-projects-with-JavaScript-HTML-CSS/09%20-%20Recipe%20Finder/recipeFinder.html) 
+
 ---
