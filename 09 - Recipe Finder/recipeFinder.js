@@ -9,6 +9,8 @@ const recipeSectionTitle = document.querySelector('.js-recipe-section-title');
 const recipeSectioncategory = document.querySelector('.js-recipe-section-category');
 const instructionText = document.querySelector('.js-instructions-text');
 const ingredientsSection = document.querySelector('.js-ingredients-section');
+const recipeImage = document.querySelector('.js-recipe-image');
+const youtubeLink = document.querySelector('.js-youtube-link');
 
 const BASE_URL = 'https://www.themealdb.com/api/json/v1/1/';
 const SEARCH_URL = `${BASE_URL}search.php?s=`;
@@ -31,6 +33,8 @@ function search() {
 
   resultsContainer.style.display = 'none';
 
+  recipeSection.style.display = 'none';
+
   fetch(`${SEARCH_URL}${searchKeyword}`)
     .then(response => {
       if (response.ok)
@@ -48,7 +52,7 @@ function search() {
         resultsContainer.innerHTML = '';
         meals.forEach((meal) => {
           resultsContainer.innerHTML += `
-          <div class="meal-card">
+          <div class="meal-card js-meal-card" data-id=${meal.idMeal}>
             <img src=${meal.strMealThumb} class="meal-thumbnail">
             <div class="result-card-bottom-row">
               <p class="meal-name">
@@ -60,6 +64,12 @@ function search() {
             </div>
           </div>
         `;
+        });
+
+        document.querySelectorAll('.js-meal-card').forEach((mealCard) => {
+          mealCard.addEventListener('click', () => {
+            lookup(mealCard.dataset.id);
+          });
         });
       }
       else {
@@ -73,3 +83,53 @@ function search() {
       console.error(error);
     });
 }
+
+function lookup(mealId) {
+  fetch(`${LOOKUP_URL}${mealId}`)
+    .then(response => {
+      if (response.ok)
+        return response.json();
+      else
+        throw new Error('something went wrong while looking up the meal');
+    }).then(data => {
+      if (data.meals === 'Invalid ID')
+        throw new Error('Invalid ID');
+      else {
+        const meal = data.meals[0];
+
+        recipeSection.style.display = 'flex';
+        recipeImage.src = meal.strMealThumb;
+        recipeSectionTitle.textContent = meal.strMeal;
+        recipeSectioncategory.textContent = meal.strCategory;
+        instructionText.textContent = meal.strInstructions;
+
+        ingredientsSection.innerHTML = `
+          <p class="recipe-subsection-title">
+            Ingredients
+          </p>
+        `;
+
+        for (let i = 1; i <= 20; i++) {
+          if (meal[`strIngredient${i}`]) {
+            ingredientsSection.innerHTML += `
+              <div class="ingredient">
+                <i class="fa-solid fa-circle-check"></i>
+                <p>
+                  ${meal[`strMeasure${i}`]} ${meal[`strIngredient${i}`]}
+                </p>
+              </div>
+            `;
+          }
+        }
+
+        youtubeLink.href = meal.strYoutube;
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+backButton.addEventListener('click', ()=>{
+  recipeSection.style.display = 'none';
+});
